@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 def user_directory_path(instance, filename):
@@ -7,5 +8,8 @@ def user_directory_path(instance, filename):
 
 
 class Image(models.Model):
-    uploaded_image = models.ImageField()
-    owner_id = models.IntegerField()
+    image = models.ImageField()
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
+
+    def __str__(self):
+        return self.image.url

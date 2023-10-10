@@ -4,3 +4,6 @@ djangorestframework
 Pillow==10.0.1
 django-crispy-forms>=1.9.0
 crispy_bootstrap5
+requests
+pyyaml
+django-cors-headers
